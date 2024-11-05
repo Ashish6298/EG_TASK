@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* styles/globals.css or components/TodoList.module.css */
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f8f9fa; /* Light background to contrast with white */
+    border-radius: 15px;
+    
+    /* Shadow for depth */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+    
+    /* 3D Effect */
+    transform: perspective(1000px) rotateX(3deg) rotateY(-3deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Add border and subtle animations */
+    border: 2px solid #e9ecef; /* Soft border to define the edges */
+  }
+  
+  .container:hover {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 15px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Optional: Add a subtle transition effect for smoothness */
+  .container {
+    transition: all 0.3s ease-in-out;
+  }
+  .fade-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  .fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  .fade-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
